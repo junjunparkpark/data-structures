@@ -28,6 +28,12 @@ describe('binarySearchTree', function() {
     expect(binarySearchTree.contains(8)).to.equal(false);
   });
 
+  // Added Test
+  it('should throw an error when provided an undefined value', function() {
+    var fn = function() { binarySearchTree.insert(undefined); };
+    expect(fn).to.throw(Error);
+  });
+
   it('should execute a callback on every value in a tree using "depthFirstLog"', function() {
     var array = [];
     var func = function(value) { array.push(value); };
@@ -36,4 +42,6 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3]);
   });
+
+  
 });

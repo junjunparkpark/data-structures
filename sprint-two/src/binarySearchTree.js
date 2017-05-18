@@ -5,6 +5,9 @@ var BinarySearchTree = function(value) {
 };
 
 BinarySearchTree.prototype.insert = function(value) {
+  if (value === undefined) {
+    throw new Error('Error: Value should be defined.');
+  }
   if (value > this.value) {
     if (this.right instanceof BinarySearchTree) {
       this.right.insert(value);
@@ -48,4 +51,8 @@ BinarySearchTree.prototype.depthFirstLog = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
+insert = O(log n)
+contains = O(log n)
+depthFirstLog = O(log n)
  */
