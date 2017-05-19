@@ -19,7 +19,7 @@ HashTable.prototype.insert = function(k, v) {
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
-  //console.log(bucket[getIndexByKey(bucket, k)][1]);
+
   var targetIndex = getIndexByKey(bucket, k);
   if (targetIndex === -1) {
     return undefined;
@@ -29,8 +29,7 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  // console.log(this._storage.get(3));
-  // console.log(this._storage.get(1));
+
   this._storage.each(function(bucket, i, storage) {
     if (i === index) {
       var temp = getIndexByKey(storage[i], k);
@@ -55,6 +54,10 @@ var getIndexByKey = function(arr, k) {
   return result;
 };
 
+
+// for every bucket
+  // for every pair 
+    //
 
 
 /*

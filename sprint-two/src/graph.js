@@ -1,5 +1,3 @@
-
-
 // Instantiate a new graph
 var Graph = function() {
   this.Nodes = [];
@@ -9,6 +7,9 @@ var Graph = function() {
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  if (node === undefined || node === null) {
+    throw new Error('Node value must be defined');
+  }
   this.Nodes.push(node);
 };
 

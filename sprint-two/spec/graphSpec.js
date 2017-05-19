@@ -68,4 +68,10 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  //Added Test
+  it('should throw an error when adding an undefined value', function() {
+    var fn = function() { graph.addNode(undefined); };
+    expect(fn).to.throw(Error);
+  });
 });
